@@ -1,0 +1,209 @@
+/* Modal window */
+md-dialog {
+    border-radius: 0;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+md-dialog::-webkit-scrollbar {
+    width: 0;
+}
+.modal-window {
+    width: 470px;
+    height: auto;
+    background-color: #f1f3f7;
+}
+.modal-window h3 {
+    padding: 12px 0;
+    background-color: #144b8f;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font: 16px "OpenSans-Regular";
+    border-right: 1px solid rgba(20, 75, 143, 0.5);
+    position: relative;
+}
+.close-icon {
+    outline: none;
+    position: absolute;
+    right: -1px;
+    top: 0;
+    width: 36px;
+    height: 100%;
+    background: #0f3b70 url(../img/sprite.png) -318px -48px;
+    cursor: pointer;
+}
+.email-form .top_form_wrap .close_icon {
+    padding: 0;
+    background: #0f3c82 url(../img/sprite.png) -295px -55px;
+}
+.send-review {
+    padding: 22px 30px 30px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.send-review.show-message {
+    padding: 22px 30px;
+}
+.show-message .message-txt {
+    padding-bottom: 15px;
+}
+.send-review form input, .send-review form textarea {
+    width: 100%;
+    border: none;
+//border-left: 1px solid #f6f6f7;
+    border-bottom: 1px solid #c1c3c6;
+    padding: 10px 17px;
+    outline: none;
+    color: #5f5f5f;
+    font: 16px "OpenSans-Light";
+    background-color: #fff;
+}
+.send-review form input[type="email"], .send-review form input[type="name"]{
+    height: 43px;
+    margin-bottom: 0;
+}
+.send-review form input:focus,.send-review form input:active {
+    padding: 10px 17px;
+}
+md-input-container.md-input-focused .md-input, md-input-container.md-input-resized .md-input, md-input-container .md-input.ng-invalid.ng-dirty {
+    padding: 10px 17px;
+}
+.send-review form textarea::-webkit-input-placeholder {
+    color: rgba(0,0,0,0.54);
+    font: 16px "OpenSans-Light";
+    font-style: italic;
+}
+md-input-container .md-placeholder, md-input-container label:not(.md-no-float):not(.md-container-ignore) {
+    font: 16px "OpenSans-Light";
+    font-style: italic;
+    padding-left: 17px;
+    -webkit-transform: translate3d(0,34px,0) scale(1);
+    transform: translate3d(0,34px,0) scale(1);
+}
+md-input-container label {
+    font: 16px "OpenSans-Light";
+    font-style: italic;
+    padding-left: 17px;
+}
+md-input-container.md-input-focused label:not(.md-no-float), md-input-container.md-input-has-placeholder label:not(.md-no-float), md-input-container.md-input-has-value label:not(.md-no-float) {
+    -webkit-transform: translate3d(0,6px,0) scale(.75);
+    transform: translate3d(0,6px,0) scale(.75);
+}
+md-input-container.md-block {
+    display: inline-block;
+}
+md-input-container {
+    margin: 15px 0;
+}
+.md-input-has-value label:not(.md-no-float):not(.md-container-ignore), .md-input-focused label:not(.md-no-float):not(.md-container-ignore) {
+    padding-left: 0;
+}
+.send-review form textarea {
+    margin-top: 2px;
+    margin-bottom: 15px;
+    resize: none;
+}
+.send-review .stars-raiting {
+    width: 100%;
+    border-bottom: 1px solid #d3d5d9;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.send-review .stars-raiting .raiting-col {
+    width: 40%;
+    margin-bottom: 6px;
+    margin-top: 4px;
+}
+.raiting-col .ttl-raiting {
+    margin-bottom: 14px;
+    font-family: "OpenSans-Light";
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.send-review input.btn-post-comment {
+    border: 2px solid #44900c;
+    padding: 10px 45px;
+    text-transform: uppercase;
+    color: #fff;
+    font: 13px "OpenSans-Semibold";
+    background-color: #44900c;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    margin: auto;
+}
+.send-review input.btn-post-comment:hover {
+    background-color: transparent;
+    color: #44900c;
+}
+.send-review md-input-container {
+    width: 100%;
+}
+.email-container {
+    margin-top: 0;
+}
+.wrap_btn {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+}
+
+/*PRELOADER CSS*/
+.preloader {
+    position: fixed;
+    z-index: 300000;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.preloader img {
+    left: 50%;
+    top: 50%;
+    position: relative;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/*PRELOADER CSS END*/

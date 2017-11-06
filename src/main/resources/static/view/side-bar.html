@@ -1,0 +1,96 @@
+<label>Page concepts ({{pageConcepts.length}})</label>
+<div class="sm-page-concepts sm-box-border sm-scrollbar" ng-hide="pageConcepts.length ==0">
+    <div ng-class="{'sm-concept-list-elem-selected': c.id == currentConcept.id}"
+         class="sm-concept-list-elem sm-force-overflow"
+         ng-repeat="c in pageConcepts"
+         ng-click="changeCurrentConcept($index)">
+        {{c.concept}}
+    </div>
+</div>
+<div class="sm-page-concepts sm-box-border" ng-show="pageConcepts.length == 0">
+    No concepts on this page
+</div>
+<md-button class="md-raised md-primary sm-md-button" ng-click="getSelectedText('concept')">New concept
+</md-button>
+<div class="sm-current-concept sm-box-border" ng-hide="currentConcept.concept.length == 0">
+    <label>Current concept</label>
+    <div class="sm-current-concept-head row">
+        <span class="col-md-11">{{currentConcept.concept}}</span>
+        <a ng-show="editConcept == false" href=""
+           ng-click="editConcept = true" class="col-md-1">[+]</a>
+        <a ng-show="editConcept == true" href=""
+           ng-click="editConcept = false" class="col-md-1">[-]</a>
+    </div>
+    <div class="sm-current-concept-edit" ng-show="editConcept == true">
+        <md-input-container class="sm-thesis-class">
+            <label>Word froms</label>
+            <textarea md-detect-hidden ng-model="currentConcept.forms" rows="2"
+                      md-select-on-focus></textarea>
+        </md-input-container>
+        <md-input-container class="sm-concept-class">
+            <label>Concept class</label>
+            <md-select ng-model="currentConcept.cClass.id">
+                <md-option ng-repeat="c in cClasses" value="{{c.id}}">{{c.caption}}</md-option>
+                <!--<md-option value="1">Definition1</md-option>-->
+            </md-select>
+        </md-input-container>
+        <md-button class="md-raised md-primary sm-md-button" ng-click="addCurrentConcept()"
+                   ng-hide="currentConcept.id != undefined">Add
+        </md-button>
+        <md-button class="md-raised md-primary sm-md-button" ng-click="saveCurrentConcept()"
+                   ng-hide="currentConcept.id == undefined">Save
+        </md-button>
+        <md-button class="md-raised md-primary sm-md-button" ng-click="removeCurrentConcept()"
+                   ng-hide="currentConcept.id == undefined">Remove
+        </md-button>
+    </div>
+</div>
+<div ng-hide="currentConcept.theses.length == 0">
+    <label>Concept theses on this page ({{currentConcept.theses.length}})</label>
+    <div class="sm-page-concepts sm-box-border sm-scrollbar">
+        <div ng-class="{'sm-concept-list-elem-selected': t.id == currentThesis.id}"
+             class="sm-concept-list-elem sm-force-overflow"
+             ng-repeat="t in currentConcept.theses"
+             ng-click="changeCurrentThesis($index)">
+            {{t.thesis}}
+        </div>
+    </div>
+</div>
+<div ng-hide="currentConcept.id == undefined">
+    <md-button class="md-raised md-primary sm-md-button" ng-click="getSelectedText('thesis')">New thesis
+    </md-button>
+    <div class="sm-thesis-edit sm-box-border" ng-hide="currentThesis.thesis.length == 0">
+        <label>Current thesis</label>
+        <div class="sm-thesis-edit-head row">
+            <span class="col-md-11">Edit thesis</span>
+            <a ng-show="editThesis == false" href=""
+               ng-click="editThesis = true" class="col-md-1">[+]</a>
+            <a ng-show="editThesis == true" href=""
+               ng-click="editThesis = false" class="col-md-1">[-]</a>
+        </div>
+        <div class="sm-thesis-edit-content" ng-hide="editThesis == false">
+            <md-input-container class="md-block">
+                <label>Thesis</label>
+                <textarea md-detect-hidden ng-model="currentThesis.thesis" md-maxlength="500" rows="3"
+                          md-select-on-focus>Some thesis text here</textarea>
+            </md-input-container>
+            <md-input-container class="sm-thesis-class">
+                <label>Thesis class</label>
+                <md-select ng-model="currentThesis.tClass.id">
+                    <md-option ng-repeat="t in tClasses" value="{{t.id}}">{{t.caption}}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-button class="md-raised md-primary sm-md-button" ng-click="addCurrentThesis()"
+                       ng-hide="currentThesis.id != undefined">Add
+            </md-button>
+            <md-button class="md-raised md-primary sm-md-button" ng-click="saveCurrentThesis()"
+                       ng-hide="currentThesis.id == undefined">Save
+            </md-button>
+            <md-button class="md-raised md-primary sm-md-button" ng-click="removeCurrentThesis()"
+                       ng-hide="currentThesis.id == undefined">Remove
+            </md-button>
+        </div>
+    </div>
+</div>
+<img class="sm-wiki-show-block" src="img/wiki.png" ng-click="toggleWiki()">
+</img>

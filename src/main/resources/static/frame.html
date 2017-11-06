@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+some text in iframe
+<button>send text</button>
+
+<script type="text/javascript">
+    function listener(event) {
+        if (event.origin !== "http://rd-client-side.com")
+            return;
+        if (event.data === "getSelectedTextEvent") {
+            parent.postMessage(window.getSelection().toString(), "http://rd-client-side.com")
+        }
+    }
+
+    if (window.addEventListener) {
+        window.addEventListener("message", listener, false);
+    } else {
+        window.attachEvent("onmessage", listener);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<md-dialog aria-label="Modal Window">
+    <div class="modal-window">
+        <h3>{{title}}<span class="close-icon" ng-click="cancel()"></span></h3>
+        <div class="send-review show-message">
+            <p class="message-txt">
+                {{msg}}
+            </p>
+            <input type="button" class="btn-post-comment" ng-click="answer(message)" value="OK">
+        </div>
+    </div>
+</md-dialog>
